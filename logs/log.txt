@@ -1,0 +1,4 @@
+16.06.2014 13:33:31 [main] DEBUG by.bsu.filippov.train.logic.PassengerCarComparing  - Comfort comparator created
+16.06.2014 13:33:31 [main] ERROR by.bsu.filippov.train.launcher.Launcher  - sdjkfnvslkdbvjd
+16.06.2014 13:33:41 [main] DEBUG by.bsu.filippov.train.logic.PassengerCarComparing  - Comfort comparator created
+16.06.2014 13:33:41 [main] ERROR by.bsu.filippov.train.launcher.Launcher  - sdjkfnvslkdbvjd
