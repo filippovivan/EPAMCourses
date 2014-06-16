@@ -41,4 +41,14 @@ public class Train {
 	public Iterator<RailroadCar> carsIterator() {
 		return cars.iterator();
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(locomotive + "\n");
+		for (RailroadCar car : cars) {
+			builder.append(car + "\n");
+		}
+		return builder.toString();
+	}
 }
