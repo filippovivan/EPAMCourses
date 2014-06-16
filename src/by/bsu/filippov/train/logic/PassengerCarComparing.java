@@ -8,8 +8,7 @@ import by.bsu.filippov.train.enteties.PassengerCar;
 import by.bsu.filippov.train.enteties.PassengerCar.PassengerCarClass;
 
 public class PassengerCarComparing {
-	private static Logger log = Logger.getLogger(PassengerCarComparing.class
-			.getName());
+	private static Logger log = Logger.getLogger(PassengerCarComparing.class);
 
 	public static Comparator<PassengerCar> getComfortComparator() {
 		log.debug("Comfort comparator created");
