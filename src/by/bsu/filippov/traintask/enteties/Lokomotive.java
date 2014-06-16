@@ -1,5 +1,6 @@
 package by.bsu.filippov.traintask.enteties;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -9,9 +10,12 @@ public class Lokomotive extends TrainPart {
 	}
 
 	private LocomotiveType type;
-
-	private int EnginePower;
+	private int enginePower;
 	private List<String> drivers;
+
+	public Lokomotive() {
+		drivers = new ArrayList<>();
+	}
 
 	public boolean addDriver(String driver) {
 		return this.drivers.add(driver);
@@ -30,11 +34,22 @@ public class Lokomotive extends TrainPart {
 	}
 
 	public int getEnginePower() {
-		return EnginePower;
+		return enginePower;
 	}
 
 	public void setEnginePower(int enginePower) {
-		EnginePower = enginePower;
+		this.enginePower = enginePower;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Locomotive " + " " + type + " " + enginePower + " "
+				+ String.valueOf(getId()) + ". Cargo:\n");
+		for (String driver : drivers) {
+			builder.append(driver + "\n");
+		}
+		return builder.toString();
 	}
 
 }

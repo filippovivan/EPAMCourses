@@ -2,3 +2,7 @@
 16.06.2014 13:33:31 [main] ERROR by.bsu.filippov.train.launcher.Launcher  - sdjkfnvslkdbvjd
 16.06.2014 13:33:41 [main] DEBUG by.bsu.filippov.train.logic.PassengerCarComparing  - Comfort comparator created
 16.06.2014 13:33:41 [main] ERROR by.bsu.filippov.train.launcher.Launcher  - sdjkfnvslkdbvjd
+16.06.2014 14:12:11 [main] DEBUG by.bsu.filippov.traintask.logic.PassengerCarComparing  - Comfort comparator created
+16.06.2014 14:12:11 [main] ERROR by.bsu.filippov.traintask.launcher.Launcher  - sdjkfnvslkdbvjd
+16.06.2014 14:12:14 [main] DEBUG by.bsu.filippov.traintask.logic.PassengerCarComparing  - Comfort comparator created
+16.06.2014 14:12:14 [main] ERROR by.bsu.filippov.traintask.launcher.Launcher  - sdjkfnvslkdbvjd

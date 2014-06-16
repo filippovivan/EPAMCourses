@@ -6,10 +6,7 @@
 			<param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss} [%t] %-5p %c %x - %m%n" />
 		</layout>
 	</appender>
-	<root>
-		<priority value="debug" />
-		<appender-ref ref="Console" />
-	</root>
+
 	<appender name="TrainLogger" class="org.apache.log4j.FileAppender">
 		<param name="File" value="logs/log.txt" />
 		<layout class="org.apache.log4j.PatternLayout">
@@ -19,6 +16,7 @@
 	<root>
 		<priority value="debug" />
 		<appender-ref ref="TrainLogger" />
+		<appender-ref ref="Console" />
 	</root>
 
 </log4j:configuration>
