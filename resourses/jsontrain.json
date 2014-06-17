@@ -21,4 +21,12 @@
         "seatingcapacity": 36,
         "seatingtype": "SLEEPING"
     }
+	"car1": {
+    	"cartype": "passenger",
+        "id": 113,
+        "mass": 2400,
+        "axis": 6,
+        "seatingcapacity": 36,
+        "seatingtype": "SLEEPING"
+    }
 }}    
