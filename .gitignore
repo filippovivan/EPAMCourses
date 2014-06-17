@@ -1,2 +1,5 @@
 # Ignore compiled files
 bin
+
+# Ignore logs
+logs
