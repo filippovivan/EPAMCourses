@@ -1,4 +1,4 @@
-package by.bsu.traintask.launcher;
+package by.bsu.traintask.launching;
 
 import java.util.Comparator;
 
