@@ -1,36 +1,34 @@
-package by.bsu.filippov.traintask.enteties;
+package by.bsu.traintask.enteties;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import by.bsu.traintask.enteties.accessory.Passenger;
+import by.bsu.traintask.enteties.accessory.PassengerCarType;
+import by.bsu.traintask.exceptions.LogicalException;
 
 public class PassengerCar extends RailroadCar {
 
 	private static final String FULL_CAR_EXCEPTION_TEXT = "Can't add passenger to full car.";
-	private static final Logger log = Logger.getLogger(RailroadCar.class);
 
 	private PassengerCarType type;
 	private int seatingCapacity;
-	private List<String> passengers;
+	private List<Passenger> passengers;
 
 	public PassengerCar() {
 		passengers = new ArrayList<>();
 	}
 
-	public boolean addPassenger(String passengers) {
+	public boolean addPassenger(Passenger passengers) throws Exception {
 		if (this.passengers.size() < seatingCapacity) {
 			return this.passengers.add(passengers);
 		} else {
-			RuntimeException e = new IllegalStateException(
-					FULL_CAR_EXCEPTION_TEXT);
-			log.error(e);
-			throw e;
+			throw new LogicalException(FULL_CAR_EXCEPTION_TEXT);
 		}
 	}
 
-	public Iterator<String> passengersIterator() {
+	public Iterator<Passenger> passengersIterator() {
 		return passengers.iterator();
 	}
 
@@ -38,8 +36,11 @@ public class PassengerCar extends RailroadCar {
 		return seatingCapacity;
 	}
 
-	public void setSeatingCapacity(int seatingCapacity) {
-		this.seatingCapacity = seatingCapacity;
+	public void setSeatingCapacity(int seatingCapacity) throws LogicalException {
+		if (seatingCapacity >= 0) {
+			this.seatingCapacity = seatingCapacity;
+		}
+		throw new LogicalException("Capacity must be positive.");
 	}
 
 	public PassengerCarType getType() {
@@ -55,7 +56,7 @@ public class PassengerCar extends RailroadCar {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Passengers car " + " " + type + String.valueOf(getId())
 				+ ". Passengers:\n");
-		for (String passenger : passengers) {
+		for (Passenger passenger : passengers) {
 			builder.append(passenger + "\n");
 		}
 		return builder.toString();

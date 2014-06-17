@@ -1,8 +1,10 @@
-package by.bsu.filippov.traintask.enteties;
+package by.bsu.traintask.enteties;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import by.bsu.traintask.exceptions.LogicalException;
 
 public class Lokomotive extends TrainPart {
 	public static enum LocomotiveType {
@@ -37,8 +39,11 @@ public class Lokomotive extends TrainPart {
 		return enginePower;
 	}
 
-	public void setEnginePower(int enginePower) {
-		this.enginePower = enginePower;
+	public void setEnginePower(int enginePower) throws LogicalException {
+		if (enginePower > 0) {
+			this.enginePower = enginePower;
+		}
+		throw new LogicalException("Engine power must be positive.");
 	}
 
 	@Override

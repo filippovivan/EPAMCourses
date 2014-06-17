@@ -1,8 +1,11 @@
-package by.bsu.filippov.traintask.enteties;
+package by.bsu.traintask.enteties;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import by.bsu.traintask.enteties.accessory.Cargo;
+import by.bsu.traintask.exceptions.LogicalException;
 
 public class GoodsWagon extends RailroadCar {
 	public static enum GoodsWagonType {
@@ -11,17 +14,17 @@ public class GoodsWagon extends RailroadCar {
 
 	private GoodsWagonType type;
 	private int capacity;
-	private List<String> goods;
+	private List<Cargo> goods;
 
 	public GoodsWagon() {
 		goods = new ArrayList<>();
 	}
 
-	public boolean addGoods(String goods) {
+	public boolean addGoods(Cargo goods) {
 		return this.goods.add(goods);
 	}
 
-	public Iterator<String> goodsIterator() {
+	public Iterator<Cargo> goodsIterator() {
 		return goods.iterator();
 	}
 
@@ -37,8 +40,11 @@ public class GoodsWagon extends RailroadCar {
 		return capacity;
 	}
 
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
+	public void setCapacity(int capacity) throws LogicalException {
+		if (capacity >= 0) {
+			this.capacity = capacity;
+		}
+		throw new LogicalException("Can't set negative capacity.");
 	}
 
 	@Override
@@ -46,7 +52,7 @@ public class GoodsWagon extends RailroadCar {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Goods wagon " + " " + type + String.valueOf(getId())
 				+ ". Cargo:\n");
-		for (String good : goods) {
+		for (Cargo good : goods) {
 			builder.append(good + "\n");
 		}
 		return builder.toString();

@@ -1,11 +1,12 @@
-package by.bsu.filippov.traintask.train;
+package by.bsu.traintask.train;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import by.bsu.filippov.traintask.enteties.Lokomotive;
-import by.bsu.filippov.traintask.enteties.RailroadCar;
+import by.bsu.traintask.enteties.Lokomotive;
+import by.bsu.traintask.enteties.RailroadCar;
+import by.bsu.traintask.exceptions.LogicalException;
 
 public class Train {
 	private Lokomotive locomotive;
@@ -34,8 +35,11 @@ public class Train {
 		return this.cars.addAll(cars);
 	}
 
-	public boolean addCar(RailroadCar car) {
-		return this.cars.add(car);
+	public boolean addCar(RailroadCar car) throws LogicalException {
+		if (car != null) {
+			return this.cars.add(car);
+		}
+		throw new LogicalException("Null car not allowed.");
 	}
 
 	public Iterator<RailroadCar> carsIterator() {

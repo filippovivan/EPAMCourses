@@ -1,29 +1,28 @@
-package by.bsu.filippov.traintask.logic;
+package by.bsu.traintask.logic;
 
 import java.util.Comparator;
 
 import org.apache.log4j.Logger;
 
-import by.bsu.filippov.traintask.enteties.PassengerCar;
+import by.bsu.traintask.enteties.PassengerCar;
 
 public class PassengerCarComparing {
-	private static Logger log = Logger.getLogger(PassengerCarComparing.class);
+	private static Logger LOG = Logger.getLogger(PassengerCarComparing.class);
 
 	public static Comparator<PassengerCar> getComfortComparator() {
-		log.debug("Comfort comparator created");
+		LOG.debug("Comfort comparator created");
 		return new Comparator<PassengerCar>() {
 
 			@Override
 			public int compare(PassengerCar o1, PassengerCar o2) {
-				return o1.getType().getComfortLevel()
-						- o2.getType().getComfortLevel();
+				return o1.getType().comfortLevel - o2.getType().comfortLevel;
 			}
 
 		};
 	}
 
 	public static Comparator<PassengerCar> getCapacityComparator() {
-		log.debug("Capacity comparator created");
+		LOG.debug("Capacity comparator created");
 		return new Comparator<PassengerCar>() {
 
 			@Override

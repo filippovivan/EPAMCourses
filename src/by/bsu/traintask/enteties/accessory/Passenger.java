@@ -1,23 +1,21 @@
-package by.bsu.filippov.traintask.enteties;
+package by.bsu.traintask.enteties.accessory;
 
-public abstract class TrainPart {
+public class Passenger {
 	private int id;
-	private int taroMass;
+	private String fullName;
 
-	public int getMass() {
-		return taroMass;
-	}
-
-	public void setMass(int mass) {
-		this.taroMass = mass;
+	public Passenger(int id, String fullName) {
+		super();
+		this.id = id;
+		this.fullName = fullName;
 	}
 
 	public int getId() {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public String getFullName() {
+		return fullName;
 	}
 
 	@Override
@@ -36,10 +34,14 @@ public abstract class TrainPart {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		TrainPart other = (TrainPart) obj;
+		Passenger other = (Passenger) obj;
 		if (id != other.id)
 			return false;
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return id + " " + fullName;
+	}
 }
