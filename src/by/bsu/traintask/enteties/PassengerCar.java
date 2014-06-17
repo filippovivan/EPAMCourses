@@ -55,10 +55,13 @@ public class PassengerCar extends RailroadCar {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Passengers car " + " " + type + String.valueOf(getId())
-				+ ". Passengers:\n");
-		for (Passenger passenger : passengers) {
-			builder.append(passenger + "\n");
+		builder.append("Passenger car " + " " + type + " "
+				+ String.valueOf(getId()) + ".");
+		if (!passengers.isEmpty()) {
+			builder.append(" Passengers:");
+			for (Passenger passenger : passengers) {
+				builder.append("\n" + passenger);
+			}
 		}
 		return builder.toString();
 	}

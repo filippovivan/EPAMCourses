@@ -9,6 +9,8 @@ import by.bsu.traintask.exceptions.TechnicalException;
 import by.bsu.traintask.serialization.TrainParserFromJSON;
 
 public class Launcher {
+	private static final String TRAIN_JSON_PATH = "resourses/jsontrain.json";
+
 	static {
 		new DOMConfigurator().doConfigure("resourses/logconfig.xml",
 				LogManager.getLoggerRepository());
@@ -20,8 +22,8 @@ public class Launcher {
 		TrainParserFromJSON parcer = new TrainParserFromJSON();
 		try {
 			LOG.debug("Parsing began");
-			Train train = parcer.parseTrain("resourses/jsontrain.json");
-			System.out.println(train);
+			Train train = parcer.parseTrain(TRAIN_JSON_PATH);
+			LOG.info(train);
 		} catch (TechnicalException e) {
 			LOG.error(e);
 		}

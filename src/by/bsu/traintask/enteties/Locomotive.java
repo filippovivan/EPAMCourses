@@ -51,9 +51,12 @@ public class Locomotive extends TrainPart {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Locomotive " + " " + type + " " + enginePower + " "
-				+ String.valueOf(getId()) + ". Cargo:\n");
-		for (String driver : drivers) {
-			builder.append(driver + "\n");
+				+ String.valueOf(getId()) + ".");
+		if (!drivers.isEmpty()) {
+			builder.append(" Drivers:");
+			for (String driver : drivers) {
+				builder.append("\n" + driver);
+			}
 		}
 		return builder.toString();
 	}
