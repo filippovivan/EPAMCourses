@@ -43,8 +43,9 @@ public class GoodsWagon extends RailroadCar {
 	public void setCapacity(int capacity) throws LogicalException {
 		if (capacity >= 0) {
 			this.capacity = capacity;
+		} else {
+			throw new LogicalException("Can't set negative capacity.");
 		}
-		throw new LogicalException("Can't set negative capacity.");
 	}
 
 	@Override

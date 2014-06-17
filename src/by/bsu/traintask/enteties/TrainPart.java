@@ -13,8 +13,9 @@ public abstract class TrainPart {
 	public void setMass(int mass) throws LogicalException {
 		if (mass > 0) {
 			this.taroMass = mass;
+		} else {
+			throw new LogicalException("Mass must be positive.");
 		}
-		throw new LogicalException("Mass must be positive.");
 	}
 
 	public int getId() {
@@ -29,7 +30,7 @@ public abstract class TrainPart {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + id;
+		result = prime * result + (int) (id ^ (id >>> 32));
 		return result;
 	}
 

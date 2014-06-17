@@ -1,25 +1,29 @@
 package by.bsu.traintask.launching;
 
-import java.util.Comparator;
-
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
-import by.bsu.traintask.enteties.PassengerCar;
-import by.bsu.traintask.logic.PassengerCarComparing;
+import by.bsu.traintask.enteties.Train;
+import by.bsu.traintask.exceptions.TechnicalException;
+import by.bsu.traintask.serialization.TrainParserFromJSON;
 
 public class Launcher {
 	static {
 		new DOMConfigurator().doConfigure("resourses/logconfig.xml",
 				LogManager.getLoggerRepository());
 	}
-	private static final Logger log = Logger.getLogger(Launcher.class);
+	private static final Logger LOG = Logger.getLogger(Launcher.class);
 
 	public static void main(String[] args) {
-		Comparator<PassengerCar> comp = PassengerCarComparing
-				.getComfortComparator();
-		log.error("sdjkfnvslkdbvjd");
+		TrainParserFromJSON parcer = new TrainParserFromJSON();
+		try {
+			LOG.debug("Parsing began");
+			Train train = parcer.parseTrain("resourses/jsontrain.json");
+			System.out.println(train);
+		} catch (TechnicalException e) {
+			LOG.error(e);
+		}
 	}
 
 }

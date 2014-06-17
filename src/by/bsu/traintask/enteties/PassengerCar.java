@@ -39,8 +39,9 @@ public class PassengerCar extends RailroadCar {
 	public void setSeatingCapacity(int seatingCapacity) throws LogicalException {
 		if (seatingCapacity >= 0) {
 			this.seatingCapacity = seatingCapacity;
+		} else {
+			throw new LogicalException("Capacity must be positive.");
 		}
-		throw new LogicalException("Capacity must be positive.");
 	}
 
 	public PassengerCarType getType() {
