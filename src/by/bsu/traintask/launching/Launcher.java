@@ -13,6 +13,7 @@ public class Launcher {
 		new DOMConfigurator().doConfigure("resourses/logconfig.xml",
 				LogManager.getLoggerRepository());
 	}
+	
 	private static final Logger LOG = Logger.getLogger(Launcher.class);
 
 	public static void main(String[] args) {
@@ -25,5 +26,4 @@ public class Launcher {
 			LOG.error(e);
 		}
 	}
-
 }

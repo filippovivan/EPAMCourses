@@ -59,7 +59,7 @@ public class TrainParserFromJSON {
 			while ((trainPart = (JSONObject) trainString.get(CAR + i)) != null) {
 				try {
 					cars.add(parceCar(trainPart));
-					LOG.info("Car added" + i);
+					LOG.debug("Car added");
 				} catch (LogicalException e) {
 					LOG.error("Invalid car fields values. Car wasn't added.");
 				}
