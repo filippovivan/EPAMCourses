@@ -1,0 +1,32 @@
+{"train": {
+    "locomotive": {
+        "id": 1,
+        "mass": 3600,
+        "enginetype": "DIESEL",
+        "engine": 800
+    },
+    "car0": {
+    	"cartype": "passenger",
+        "id": 111,
+        "mass": 2100,
+        "axis": 6,
+        "seatingcapacity": 56,
+        "seatingtype": "COACH"
+    },
+    "car1": {
+    	"cartype": "passenger",
+        "id": 112,
+        "mass": 2400,
+        "axis": 6,
+        "seatingcapacity": 36,
+        "seatingtype": "SLEEPING"
+    }
+	"car1": {
+    	"cartype": "passenger",
+        "id": 113,
+        "mass": 2400,
+        "axis": 6,
+        "seatingcapacity": 36,
+        "seatingtype": "SLEEPING"
+    }
+}}    
