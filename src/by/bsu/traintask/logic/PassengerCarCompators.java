@@ -11,25 +11,11 @@ public class PassengerCarCompators {
 
 	public static Comparator<PassengerCar> getComfortComparator() {
 		LOG.debug("Comfort comparator created");
-		return new Comparator<PassengerCar>() {
-
-			@Override
-			public int compare(PassengerCar o1, PassengerCar o2) {
-				return o1.getType().comfortLevel - o2.getType().comfortLevel;
-			}
-
-		};
+		return (a, b) -> a.getSeatingCapacity() - b.getSeatingCapacity();
 	}
 
 	public static Comparator<PassengerCar> getCapacityComparator() {
 		LOG.debug("Capacity comparator created");
-		return new Comparator<PassengerCar>() {
-
-			@Override
-			public int compare(PassengerCar o1, PassengerCar o2) {
-				return o1.getSeatingCapacity() - o2.getSeatingCapacity();
-			}
-
-		};
+		return (a, b) -> a.getSeatingCapacity() - b.getSeatingCapacity();
 	}
 }

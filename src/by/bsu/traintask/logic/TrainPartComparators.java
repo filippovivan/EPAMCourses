@@ -6,13 +6,10 @@ import by.bsu.traintask.enteties.TrainPart;
 
 public class TrainPartComparators {
 	public static Comparator<TrainPart> getMassComparator() {
-		return new Comparator<TrainPart>() {
+		return (a, b) -> a.getMass() - b.getMass();
+	}
 
-			@Override
-			public int compare(TrainPart train0, TrainPart train1) {
-				return train0.getMass() - train1.getMass();
-			}
-
-		};
+	public static Comparator<TrainPart> getIdComparator() {
+		return (a, b) -> a.getId() - b.getId();
 	}
 }
