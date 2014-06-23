@@ -20,7 +20,6 @@ public class Launcher {
 	public static void main(String[] args) {
 		JSONTrainFactory parcer = new JSONTrainFactory(TRAIN_JSON_PATH);
 		try {
-			LOG.debug("Parsing began");
 			Train train = parcer.createInstance();
 			LOG.info(train);
 		} catch (TechnicalException e) {
